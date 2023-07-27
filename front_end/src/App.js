@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router";
 import RecentComponent from "./components/recent";
 import FormComponent from "./components/form";
 function App() {
-  console.log("Ademla");
   return (
     <div className="w-full bg-slate-400 text-center  h-screen">
       <nav className="flex justify-center align-middle mb-3">
