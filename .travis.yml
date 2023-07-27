@@ -1,0 +1,25 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t ademola123/react-test -f ./front_end/Dockerfile.dev ./front_end
+
+script:
+  - docker run -e CI=true ademola123/react-test npm run test -- --coverage  
+
+# create a production build
+after_success:
+  - docker build -t ademola123/testing-frontend ./front_end
+  - docker build -t ademola123/testing-nginx ./nginx
+  - docker build -t ademola123/testing-worker ./worker
+  - docker build -t ademola123/testing-backend ./backend
+  # login to docker cli
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # take images to docker hub
+  - docker push ademola123/testing-frontend
+  - docker push ademola123/testing-worker
+  - docker push ademola123/testing-backend
+  - docker push ademola123/testing-nginx
+
