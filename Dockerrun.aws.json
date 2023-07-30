@@ -5,19 +5,22 @@
       "name": "frontend",
       "image": "ademola123/testing-frontend",
       "hostname": "frontend",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "backend",
       "image": "ademola123/testing-backend",
       "hostname": "backend",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "worker",
       "image": "ademola123/testing-worker",
       "hostname": "worker",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "nginx",
@@ -30,7 +33,8 @@
           "containerPort": 80
         }
       ],
-      "links": ["frontend", "backend", "worker"]
+      "links": ["frontend", "backend", "worker"],
+      "memory": 128
     }
   ]
 }
