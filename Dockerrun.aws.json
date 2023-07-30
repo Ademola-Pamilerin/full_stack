@@ -1,0 +1,36 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "frontend",
+      "image": "ademola123/testing-frontend",
+      "hostname": "frontend",
+      "essential": false
+    },
+    {
+      "name": "backend",
+      "image": "ademola123/testing-backend",
+      "hostname": "backend",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "ademola123/testing-worker",
+      "hostname": "worker",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "ademola123/testing-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["frontend", "backend", "worker"]
+    }
+  ]
+}
