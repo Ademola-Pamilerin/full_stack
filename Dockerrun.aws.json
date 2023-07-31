@@ -5,7 +5,7 @@
       "name": "frontend",
       "image": "ademola123/testing-frontend",
       "hostname": "frontend",
-      "essential": true,
+      "essential": false,
       "memory": 128
     },
     {
@@ -26,7 +26,7 @@
       "name": "nginx",
       "image": "ademola123/testing-nginx",
       "hostname": "nginx",
-      "essential": false,
+      "essential": true,
       "portMappings": [
         {
           "hostPort": 80,

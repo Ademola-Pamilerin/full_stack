@@ -18,7 +18,8 @@ client
     console.log("conencted successfully");
   })
   .catch((error) => {
-    console.log(error);
+    console.log(proces.env.REDIS_CONNECTION);
+    console.log(error, "Ademola");
   });
 
 const sub = client.db_instance.duplicate();
