@@ -29,7 +29,7 @@ services:
   mongo:
     container_name: mongo
     image: mongo
-
+# the client part
   frontend:
     container_name: frontend
     build:
@@ -38,6 +38,8 @@ services:
     volumes:
       - /app/node_modules
       - ./front_end:/app
+
+      # the worker
   worker:
     container_name: worker
     build:
