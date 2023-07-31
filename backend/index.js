@@ -15,6 +15,7 @@ mongoose
     console.log("connection successful");
   })
   .catch((error) => {
+    console.log("Ademola");
     console.log(error);
   });
 
