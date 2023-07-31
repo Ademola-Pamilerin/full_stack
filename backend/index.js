@@ -42,6 +42,6 @@ app.post("/", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT, () => {
-  console.log("connected to port " + process.env.PORT);
+app.listen(4000, () => {
+  console.log("connected to port " + 4000);
 });
